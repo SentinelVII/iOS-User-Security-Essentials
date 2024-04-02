@@ -1,0 +1,38 @@
+o access your local host's downloads folder from a Kali Linux virtual machine (VM) running on your Mac, you can use the sshfs command. This command allows you to mount a remote directory from your Mac onto your Kali Linux filesystem. Here's how you can do it:
+
+Install sshfs (if not already installed): If sshfs is not installed on your Kali Linux VM, you can install it using the following command:
+
+sql
+Copy code
+sudo apt-get update
+sudo apt-get install sshfs
+Create a mount point: You need to create a directory on your Kali Linux VM where you will mount your Mac's downloads folder. For example, let's create a directory called mac_downloads in your home directory:
+
+bash
+Copy code
+mkdir ~/mac_downloads
+Mount the local host's downloads folder: Now, you can use sshfs to mount your Mac's downloads folder to the mac_downloads directory you just created. Replace username with your actual Mac username and mac_ip_address with your Mac's IP address:
+
+ruby
+Copy code
+sshfs username@mac_ip_address:/path/to/downloads ~/mac_downloads
+You'll be prompted to enter your Mac password.
+
+Access the downloads folder: Once the mount is successful, you can access your Mac's downloads folder from within your Kali Linux VM using the mac_downloads directory you created:
+
+bash
+Copy code
+cd ~/mac_downloads
+Now you're in your Mac's downloads folder from your Kali Linux VM.
+
+Remember to replace username and mac_ip_address with your actual Mac username and IP address, and /path/to/downloads with the actual path to your Mac's downloads folder.
+
+Additionally, ensure that SSH access is enabled on your Mac and that you can connect to it from your Kali Linux VM using SSH before attempting to mount the downloads folder.
+
+
+2 / 2
+
+
+
+
+
